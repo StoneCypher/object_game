@@ -1,0 +1,20 @@
+
+body              { background: #eee; }
+
+#target           { height: 384px; width: 512px; background: white; }
+#target.menu      { background-image: url("title.png");       }
+#target.game      { background-image: url("background1.png"); }
+#target.replay    { background-image: url("win_screen.png");  }
+
+#loading          { display: none; }
+.loading #loading { display: block; }
+
+.loading #target  { display: none; }
+
+#dogs             { height: 100%; }
+.doggo            { position: fixed; display: inline-block; }
+
+#begin            { position: fixed; }
+.menu #begin      { top: 300px; left: 225px; }
+.game #begin      { display: none; }
+.replay #begin    { top: 330px; left: 385px; }
