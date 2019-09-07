@@ -47,7 +47,9 @@ function PlaceAt(x, y) {
 function receiveDoggoClick(evt) {
   --doggoCount;
   evt.srcElement.parentElement.removeChild(evt.srcElement);
+  document.getElementById('woof').play();
   if (doggoCount <= 0) {
+    document.getElementById('applause').play();
     target.className = 'replay';
   }
 }
@@ -64,16 +66,12 @@ function PlaceOnNearGrass() {
   PlaceAt(x, y);
 }
 
-function place_doggos() {
-  n_times(10, PlaceOnGrass);
-  n_times(3,  PlaceOnNearGrass);
-}
-
 function enterGameMode() {
   doggoCount       = 0;
   dogs.innerHTML   = '';
   target.className = 'game';
-  place_doggos();
+  n_times(10, PlaceOnGrass);
+  n_times(4,  PlaceOnNearGrass);
 }
 
 function startup() {
@@ -81,8 +79,7 @@ function startup() {
   target = document.getElementById('target');
   dogs   = document.getElementById('dogs');
 
-  document.body.className = 'running';
-  target.className        = 'menu';
+  target.className = 'menu';
 
   document.getElementById('begin').onclick = enterGameMode;
 
