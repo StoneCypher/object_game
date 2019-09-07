@@ -28,8 +28,6 @@ function PlaceAt(x, y) {
   let realToBack        = (screenHeight - y) / screenHeight,
       scale             = 1 - (realToBack * 1);
 
-  console.log(scale);
-
   let thisDoggo         = document.createElement('img');
 
   thisDoggo.className   = 'doggo';
